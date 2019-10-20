@@ -43,7 +43,7 @@ public class CollectionTestSuite {
         OddNumbersExterminator exterminator = new OddNumbersExterminator();
         //When
         ArrayList<Integer> result = exterminator.exterminate(numbers);
-        System.out.println("Testing if list is empty");
+        System.out.println("Testing if list contains evens only.");
         //Then
         Assert.assertEquals(result,numbers);
     }
