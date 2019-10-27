@@ -27,15 +27,14 @@ public class ShapeCollectorTestSuite {
     @Test
     public void testAddFigure() {
         //Given
-        ShapeCollector testList = new ShapeCollector(new ArrayList<>(Arrays.asList(
-                new Circle(11), new Square(7))));
+        ShapeCollector testList = new ShapeCollector(new ArrayList<>());
         ShapeCollector fullList = new ShapeCollector(new ArrayList<>(Arrays.asList(
-                new Circle(11), new Square(7), new Triangle(3,4))));
+                new Triangle(3,4))));
         int fullListSize = fullList.getShapeList().size();
 
         //When
         testList.addFigure(new Triangle(3,4));
-        int testListSize = testList.getShapeList().size()
+        int testListSize = testList.getShapeList().size();
 
         //Then
         Assert.assertEquals(fullListSize, testListSize);
@@ -44,18 +43,15 @@ public class ShapeCollectorTestSuite {
     @Test
     public void testRemoveFigure(){
         //Given
-        Circle circle = new Circle(11);
-        Square square = new Square(7);
         Triangle triangle = new Triangle(3,4);
         ShapeCollector testList = new ShapeCollector(new ArrayList<>(Arrays.asList(
-                circle, square, triangle)));
-        ShapeCollector shortList = new ShapeCollector(new ArrayList<>(Arrays.asList(
-                circle, square)));
+                triangle)));
+        ShapeCollector shortList = new ShapeCollector(new ArrayList<>());
 
         int shortListSize = shortList.getShapeList().size();
         //When
         testList.removeFigure(triangle);
-        int testListSize = testList.getShapeList().size()
+        int testListSize = testList.getShapeList().size();
 
         //Then
         Assert.assertEquals(shortListSize, testListSize);
@@ -70,13 +66,13 @@ public class ShapeCollectorTestSuite {
                 circle, square, triangle)));
 
         //When
+        Shape shape0 = testList.getFigure(0);
         Shape shape1 = testList.getFigure(1);
         Shape shape2 = testList.getFigure(2);
-        Shape shape3 = testList.getFigure(3);
         //Then
-        Assert.assertEquals(circle, shape1);
-        Assert.assertEquals(square, shape2);
-        Assert.assertEquals(triangle, shape3);
+        Assert.assertEquals(circle, shape0);
+        Assert.assertEquals(square, shape1);
+        Assert.assertEquals(triangle, shape2);
     }
     @Test
     public void testShowFigures(){
@@ -84,8 +80,8 @@ public class ShapeCollectorTestSuite {
         Circle circle = new Circle(11);
         Square square = new Square(7);
         Triangle triangle = new Triangle(3,4);
-        ArrayList testList = new ArrayList<Shape>(Arrays.asList(
-                circle, square, triangle)));
+        ArrayList<Shape> testList = new ArrayList<>(Arrays.asList(
+                circle, square, triangle));
         ShapeCollector shapesList = new ShapeCollector(testList);
         //Then
         Assert.assertEquals(testList,shapesList.showFigures());
