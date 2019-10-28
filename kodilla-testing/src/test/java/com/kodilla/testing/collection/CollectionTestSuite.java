@@ -27,7 +27,7 @@ public class CollectionTestSuite {
     @Test
     public void testOddNumbersExterminatorEmptyList(){
         //Given
-        ArrayList<Integer> numbers = new ArrayList<>(Arrays.asList(1, 2, 4, 6, 7));
+        ArrayList<Integer> numbers = new ArrayList<>();
         OddNumbersExterminator exterminator = new OddNumbersExterminator();
         //When
         ArrayList<Integer> result = exterminator.exterminate(numbers);
@@ -40,12 +40,14 @@ public class CollectionTestSuite {
     public void testOddNumbersExterminatorNormalList(){
         //Given
         ArrayList<Integer> numbers = new ArrayList<>(Arrays.asList(1, 2, 4, 6, 7));
+        ArrayList<Integer> evens = new ArrayList<>(Arrays.asList(2, 4, 6));
+        //Takie definiowanie listy parzystych "na piechotę" pewnie nie jest wlasciwe
         OddNumbersExterminator exterminator = new OddNumbersExterminator();
         //When
         ArrayList<Integer> result = exterminator.exterminate(numbers);
         System.out.println("Testing if list contains evens only.");
         //Then
-        Assert.assertEquals(result,numbers);
+        Assert.assertEquals(result,evens);
     }
 
 }
