@@ -2,16 +2,16 @@ package com.kodilla.testing.shape;
 
 public class Circle implements Shape {
 
-    String shapeName;
-    double field;
+    private String name;
+    private double field;
 
     public Circle(double radius) {
-        this.shapeName = "circle";
+        this.name = "circle";
         this.field = Math.PI*radius*radius;
     }
 
-    public String getShapeName() {
-        return this.shapeName;
+    public String getName() {
+        return this.name;
     }
     public double getField() {
         return this.field;
@@ -20,7 +20,7 @@ public class Circle implements Shape {
     @Override
     public String toString() {
         return "Circle{" +
-                "shapeName='" + shapeName + '\'' +
+                "shapeName='" + name + '\'' +
                 ", field=" + field +
                 '}';
     }

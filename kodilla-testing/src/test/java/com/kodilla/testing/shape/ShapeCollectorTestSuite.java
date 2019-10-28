@@ -66,7 +66,7 @@ public class ShapeCollectorTestSuite {
                 circle, square, triangle)));
 
         //When
-        Shape shape0 = testList.getFigure(0);
+        Shape shape0 = testList.getFigure(30000);
         Shape shape1 = testList.getFigure(1);
         Shape shape2 = testList.getFigure(2);
         //Then

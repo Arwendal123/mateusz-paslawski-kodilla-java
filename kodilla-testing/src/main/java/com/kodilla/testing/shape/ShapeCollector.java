@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class ShapeCollector {
 
-    ArrayList<Shape> shapeList;
+    private ArrayList<Shape> shapeList;
 
     public ShapeCollector(ArrayList<Shape> shapeList) {
         this.shapeList = shapeList;
