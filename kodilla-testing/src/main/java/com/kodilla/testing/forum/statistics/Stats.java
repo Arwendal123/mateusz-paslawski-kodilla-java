@@ -18,28 +18,28 @@ public class Stats {
     }
 
     public void calculateAdvStatistics(Statistics statistics) {
-        if (statistics.usersNames().size()!=0) {
+        if (statistics.usersCount()!=0) {
             totalPosts = statistics.postsCount();
         } else {
             totalPosts = 0;
         }
-        if (statistics.usersNames().size()!=0) {
+        if (statistics.usersCount()!=0) {
             totalComments = statistics.commentsCount();
         } else {
             totalComments = 0;
         }
-        if (statistics.usersNames().size()!=0) {
-            totalUsers = statistics.usersNames().size();
+        if (statistics.usersCount()!=0) {
+            totalUsers = statistics.usersCount();
         } else {
             totalUsers = 0;
         }
-        if (statistics.usersNames().size()!=0) {
-            averagePostsPerUser = statistics.postsCount() / statistics.usersNames().size();
+        if (statistics.usersCount()!=0) {
+            averagePostsPerUser = statistics.postsCount() / statistics.usersCount();
         } else {
             averagePostsPerUser = 0;
         }
-        if (statistics.usersNames().size()!=0) {
-            averageCommentsPerUser = statistics.commentsCount() / statistics.usersNames().size();
+        if (statistics.usersCount()!=0) {
+            averageCommentsPerUser = statistics.commentsCount() / statistics.usersCount();
         } else {
             averageCommentsPerUser = 0;
         }
