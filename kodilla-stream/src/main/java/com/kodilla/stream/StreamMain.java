@@ -1,27 +1,22 @@
 package com.kodilla.stream;
 
-import com.kodilla.stream.beautifier.PoemBeautifier;
-import com.kodilla.stream.beautifier.StringModifier;
-import com.kodilla.stream.iterate.NumbersGenerator;
+import com.kodilla.stream.forumuser.Forum;
+import com.kodilla.stream.forumuser.ForumUser;
+import java.time.LocalDate;
+import java.time.Period;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 public class StreamMain {
     public static void main(String[] args) {
+        Forum theForum = new Forum();
 
-        //7.1 Zadanie: Upiększacz tekstów
-        PoemBeautifier poemBeautifier = new PoemBeautifier();
-        String text = "Jeden, dwa, TrZy, CZTERY, piec, szesc";
+        Map<Integer, ForumUser> theResultMapOfForumUsers = theForum.getList().stream()
+                .filter(forumUser -> forumUser.getSex() == 'M')
+                .filter(forumUser -> Period.between(forumUser.getDateOfBirth(), LocalDate.now()).getYears() > 19)
+                .filter(forumUser -> forumUser.getPostCount() > 0)
+                .collect(Collectors.toMap(ForumUser::getUserID, forumUser -> forumUser));
 
-        System.out.println(poemBeautifier.beautify(text,StringModifier::affixesABC));
-        System.out.println(poemBeautifier.beautify(text,(string) -> string.toUpperCase()));
-        System.out.println(poemBeautifier.beautify(text,StringModifier::brackets));
-        System.out.println(poemBeautifier.beautify(text,StringModifier::braces));
-
-        //7.2
-        System.out.println("Using Stream to generate even numbers from 1 to 20");
-        NumbersGenerator.generateEven(20);
-
-
-
-
+        System.out.println(theResultMapOfForumUsers);
     }
 }
