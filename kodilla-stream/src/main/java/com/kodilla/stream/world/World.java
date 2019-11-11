@@ -23,8 +23,4 @@ public class World {
                 .map(Country::getPeopleQuantity)
                 .reduce(BigDecimal.ZERO, (sum, current) -> sum = sum.add(current));
     }
-
-    public List<Continent> getContinents(){
-        return new ArrayList<>(continents);
-    }
 }
