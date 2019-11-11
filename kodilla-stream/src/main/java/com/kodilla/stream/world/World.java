@@ -8,7 +8,6 @@ public class World {
 
     public World() {
     }
-
     public void addContinent(Continent continent) {
         continents.add(continent);
     }
