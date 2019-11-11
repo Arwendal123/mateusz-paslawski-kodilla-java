@@ -6,7 +6,8 @@ import java.util.List;
 
 public final class Forum {
 
-    private final List<ForumUser> theUserList = new ArrayList<>();{
+    public static List<ForumUser> getList() {
+        final List<ForumUser> theUserList = new ArrayList<>();
         theUserList.add(new ForumUser(1, "username1",
                 'M', LocalDate.of(1998,1,1), 3));
         theUserList.add(new ForumUser(2, "username1",
@@ -21,9 +22,6 @@ public final class Forum {
                 'M', LocalDate.of(1970,1,1), 1));
         theUserList.add(new ForumUser(7, "username1",
                 'F', LocalDate.of(1978,1,1), 2));
-    }
-
-    public List<ForumUser> getList() {
         return new ArrayList<>(theUserList);
     }
 }
