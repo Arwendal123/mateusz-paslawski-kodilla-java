@@ -4,8 +4,12 @@ import java.util.stream.IntStream;
 
 public interface ArrayOperations {
     static double getAverage(int[] numbers){
-        return IntStream.range(0, numbers.length)
-                .map(n -> numbers[n])
-                .average().getAsDouble();
+        if(numbers.length != 0) {
+            return IntStream.range(0, numbers.length)
+                    .map(n -> numbers[n])
+                    .average().getAsDouble();
+        }else{
+            return 0.0;
+        }
     }
 }
