@@ -7,7 +7,7 @@ public interface ArrayOperations {
         if(numbers.length != 0) {
             return IntStream.range(0, numbers.length)
                     .map(n -> numbers[n])
-                    .average().getAsDouble();
+                    .average().orElse(0);
         }else{
             return 0.0;
         }

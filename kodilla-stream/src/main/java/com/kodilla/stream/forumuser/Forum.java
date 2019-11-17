@@ -13,6 +13,7 @@ public final class Forum {
 
     public void addUser(ForumUser newUser){
         theUserList.add(newUser);
+
     }
 
     public List<ForumUser> getList() {
